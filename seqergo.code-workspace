@@ -1,0 +1,22 @@
+{
+  "folders": [
+    {
+      "name": "SeqErgo",
+      "path": "."
+    },
+    {
+      "name": "Wolopi Prep (SEQOIA)",
+      "path": "../wolopi-prep"
+    },
+    {
+      "name": "SeqOIA",
+      "path": "../seqoia"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/.dart_tool": true,
+      "**/build": true
+    }
+  }
+}

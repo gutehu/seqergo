@@ -1,0 +1,30 @@
+---
+description: Relier SeqErgo aux moteurs Wolopi et SeqOIA (screening, pose, zones).
+alwaysApply: true
+---
+
+# Wolopi · SeqOIA
+
+SeqErgo réutilise les moteurs d’analyse **Wolopi** et **SeqOIA**. En cas de doute sur un angle, une pose, un screening ou une zone d’atteinte, consulter d’abord ces dépôts voisins plutôt que de réinventer.
+
+## Workspaces locaux (même machine)
+
+- SeqErgo : ce dépôt
+- Wolopi Prep (screening SEQOIA Flutter, mobilité, pose) : `../wolopi-prep` — GitHub `gutehu/wolopi-prep`
+- SeqOIA (app web screening d’origine) : `../seqoia` — GitHub `gutehu/seqoia`
+
+Ouvrir le fichier `seqergo.code-workspace` pour les trois dossiers dans un seul workspace Cursor.
+
+## Ce qui est déjà porté dans SeqErgo
+
+- Zones d’atteinte **mode manuel SEQOIA** : genou / hanche / épaule / coude, gauche et droite, seuil (atteinte) ou plage (chrono), hystérésis 2°, squelette overlay.
+- Formule d’angle : même géométrie que SEQOIA (`lib/vision/joint_angles.dart`).
+- Caméra unique partagée session (zones + reco d’activité).
+
+## Règles
+
+- Ne pas ouvrir deux caméras en session mixte.
+- Ne pas brancher le score postural automatique Wolopi sans demande explicite.
+- Pour étendre le screening, s’aligner sur `wolopi-prep` (`mobility_service`, pose ML Kit) et sur `seqoia` pour le vocabulaire métier.
+- UI SeqErgo en français.
+- Ne pas committer secrets, keystores, `.env`.
